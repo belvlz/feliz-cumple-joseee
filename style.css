@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to top right, #ffc0cb, #ffe4e1);
+    overflow-x: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7b2d45;
+    position: relative;
+    z-index: 1;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    animation: pop 1s ease-in-out;
+  }
+  
+  .nombre {
+    color: #ff4d6d;
+  }
+  
+  .mensaje {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    background-color: #efbcbccc;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .imagenes {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .imagenes img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Animaciones */
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Corazones flotantes */
+  
+  .heart {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(247, 167, 181);
+    position: fixed;
+    bottom: -20px;
+    transform: rotate(45deg);
+    animation: floatUp ease-in;
+    z-index: 0;
+    opacity: 0.7;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.7);
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: rgb(185, 90, 106);
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: -10px;
+    top: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+  
